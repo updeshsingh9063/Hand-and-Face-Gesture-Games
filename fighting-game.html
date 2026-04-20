@@ -3,55 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gesture-Controlled Fighting Game</title>
-    <script src="https://cdn.jsdelivr.net/gh/google/mediapipe@latest/mediapipe.js"></script>
-    <style>
-        body { margin: 0; overflow: hidden; }
-        canvas { display: block; }
-    </style>
+    <title>Fighting Game</title>
+    <!-- Load external dependencies -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- CORS-compatible resources -->
+    <script src="https://example.com/api.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <canvas id="gameCanvas"></canvas>
-    <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        // Hand tracking and gesture recognition setup
-        const handTracking = {}; // Initialize MediaPipe Hand Tracking
-
-        // Variables for game mechanics
-        let playerHealth = 100;
-        let playerEnergy = 100;
-        let enemyHealth = 100;
-        let combos = [];
-        let difficulty = 'beginner';
-
-        // Functionality for gestures
-        function recognizeGesture() { /* Logic for recognizing punches, blocks, kicks, etc. */ }
-
-        // AI Logic for Enemy
-        function AILogic() { /* Add AI logic based on difficulty level */ }
-
-        // Game Mechanics
-        function combat() { /* Handle combat mechanics such as health and energy */ }
-
-        // HUD Display
-        function drawHUD() { /* Draw health, energy, etc. on the canvas */ }
-
-        // Main Game Loop
-        function gameLoop() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            recognizeGesture();
-            AILogic();
-            combat();
-            drawHUD();
-            requestAnimationFrame(gameLoop);
-        }
-
-        // Start Game
-        gameLoop();
-    </script>
+    <div class="container">
+        <h1>Fighting Game</h1>
+        <p>Welcome to the Fighting Game!</p>
+    </div>
 </body>
 </html>
