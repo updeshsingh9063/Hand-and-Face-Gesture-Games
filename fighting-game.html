@@ -3,56 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered Gesture-Controlled Fighting Game</title>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <title>Gesture-Controlled Fighting Game</title>
+    <script src="https://cdn.jsdelivr.net/gh/google/mediapipe@latest/mediapipe.js"></script>
     <style>
-        body {
-            background-color: #0e0e0e;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-        #gameArea {
-            width: 100%;
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
-            background: url('cyberpunk-arena.jpg') center/cover;
-        }
-        .health-bar {
-            position: absolute;
-            height: 20px;
-            background-color: green;
-        }
-        /* Neon effect styling */
-        h1 {
-            text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
-        }
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
     </style>
 </head>
 <body>
-    <div id="gameArea">
-        <h1>AI-Powered Gesture-Controlled Fighting Game</h1>
-        <div id="player1HealthBar" class="health-bar" style="width: 100%; left: 20px; top: 10px;"></div>
-        <div id="player2HealthBar" class="health-bar" style="width: 100%; right: 20px; top: 10px;"></div>
-        <canvas id="outputCanvas"></canvas>
-    </div>
+    <canvas id="gameCanvas"></canvas>
     <script>
-        // Placeholder for hand detection and game logic
-        const hands = new Hands();
-        // Implement MediaPipe hand tracking and gesture recognition here
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-        // Function to update health bars
-        function updateHealthBars(player1Health, player2Health) {
-            document.getElementById('player1HealthBar').style.width = player1Health + '%';
-            document.getElementById('player2HealthBar').style.width = player2Health + '%';
-        }
+        // Hand tracking and gesture recognition setup
+        const handTracking = {}; // Initialize MediaPipe Hand Tracking
 
-        // Game loop and AI algorithms will go here
+        // Variables for game mechanics
+        let playerHealth = 100;
+        let playerEnergy = 100;
+        let enemyHealth = 100;
+        let combos = [];
+        let difficulty = 'beginner';
+
+        // Functionality for gestures
+        function recognizeGesture() { /* Logic for recognizing punches, blocks, kicks, etc. */ }
+
+        // AI Logic for Enemy
+        function AILogic() { /* Add AI logic based on difficulty level */ }
+
+        // Game Mechanics
+        function combat() { /* Handle combat mechanics such as health and energy */ }
+
+        // HUD Display
+        function drawHUD() { /* Draw health, energy, etc. on the canvas */ }
+
+        // Main Game Loop
         function gameLoop() {
-            // Game logic - detect gestures, update player actions, etc.
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            recognizeGesture();
+            AILogic();
+            combat();
+            drawHUD();
+            requestAnimationFrame(gameLoop);
         }
 
-        setInterval(gameLoop, 1000/60);
+        // Start Game
+        gameLoop();
     </script>
 </body>
 </html>
