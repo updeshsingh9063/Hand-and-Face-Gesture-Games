@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Gesture-Controlled Fighting Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <style>
+        body {
+            background-color: #0e0e0e;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #gameArea {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background: url('cyberpunk-arena.jpg') center/cover;
+        }
+        .health-bar {
+            position: absolute;
+            height: 20px;
+            background-color: green;
+        }
+        /* Neon effect styling */
+        h1 {
+            text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameArea">
+        <h1>AI-Powered Gesture-Controlled Fighting Game</h1>
+        <div id="player1HealthBar" class="health-bar" style="width: 100%; left: 20px; top: 10px;"></div>
+        <div id="player2HealthBar" class="health-bar" style="width: 100%; right: 20px; top: 10px;"></div>
+        <canvas id="outputCanvas"></canvas>
+    </div>
+    <script>
+        // Placeholder for hand detection and game logic
+        const hands = new Hands();
+        // Implement MediaPipe hand tracking and gesture recognition here
+
+        // Function to update health bars
+        function updateHealthBars(player1Health, player2Health) {
+            document.getElementById('player1HealthBar').style.width = player1Health + '%';
+            document.getElementById('player2HealthBar').style.width = player2Health + '%';
+        }
+
+        // Game loop and AI algorithms will go here
+        function gameLoop() {
+            // Game logic - detect gestures, update player actions, etc.
+        }
+
+        setInterval(gameLoop, 1000/60);
+    </script>
+</body>
+</html>
